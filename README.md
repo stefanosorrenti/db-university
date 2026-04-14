@@ -29,14 +29,15 @@ Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi
 
 # RELAZIONI:
 
-Un DIPARTIMENTO può avere più CORSI DI LAUREA ma più CORSO DI LAUREA hanno solo un DIPARTIMENTO. //One to many
+Un DIPARTIMENTO può avere più CORSI DI LAUREA ma un CORSO DI LAUREA ha un solo  DIPARTIMENTO. //One to many OK
 
-Un CORSO DI LAUREA può avere più CORSI e un CORSO può essere presente in più CORSI DI LAUREA.  //Many to Many
+Un CORSO DI LAUREA può avere più CORSI e un CORSO può essere presente in più CORSI DI LAUREA.  //Many to Many OK
 
-Un CORSO può avere più INSEGNANTI e più INSEGNANTI possono avere più di un CORSO. //Many to Many
+Un CORSO può avere più INSEGNANTI e OGNI INSEGNANTE può avere più di un CORSO. //Many to Many OK
 
-Un CORSO può avere più APPELLI D'ESAME e gli APPELLI D'ESAME  si riferiscono solo ad UN CORSO. //Many to one
+Un CORSO può avere più APPELLI D'ESAME un APPELLO D'ESAME  ha un solo CORSO. //One to many OK
 
-Uno STUDENTE è iscritto ad un CORSO DI LAUREA ma un CORSO DI LAUREA ha più STUDENTI. //One to many
+Uno STUDENTE è iscritto ad un CORSO DI LAUREA ma un CORSO DI LAUREA ha più STUDENTI. //One to many OK
 
-Un STUDENTO può iscriversi a più APPELLI D'ESAME e un APPELLO D'ESAME può avere più STUDENTI.
+Un STUDENTE può iscriversi a più APPELLI D'ESAME e un APPELLO D'ESAME può avere più STUDENTI. //Many to Many
+
