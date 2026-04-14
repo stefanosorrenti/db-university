@@ -39,7 +39,9 @@ Un CORSO può avere più APPELLI D'ESAME un APPELLO D'ESAME  ha un solo CORSO. /
 
 Uno STUDENTE è iscritto ad un CORSO DI LAUREA ma un CORSO DI LAUREA ha più STUDENTI. //One to many OK
 
-Un STUDENTE può iscriversi a più APPELLI D'ESAME e un APPELLO D'ESAME può avere più STUDENTI. //Many to Many
+Uno STUDENTE può iscriversi a più APPELLI D'ESAME e un APPELLO D'ESAME può avere più STUDENTI. //Many to Many
+
+Uno STUDENTE può avere più di un VOTO e un VOTO può essere dato a più STUDENTI //Many to Many
 
 # TABELLE
 
@@ -48,32 +50,46 @@ Un STUDENTE può iscriversi a più APPELLI D'ESAME e un APPELLO D'ESAME può ave
 
     -ID
     -nome_dipartimento
-    -università
-    -indirizzo
+    -descrizione
+    -codice_dipartimento
 
 
 # TABLE NAME: Corsi di laurea
     -ID
     -nome_corso_laurea
     -durata
+    -livello
+    -codice_dipartimento_id
 
 
 # TABLE NAME: Corsi
     -ID
     -nome_corso
 
+
 # TABLE NAME: Insegnanti
     -ID
     -nome
     -cognome
+    -email
+    
 
 # TABLE NAME: Appelli esami
     -ID
+    -data_esame
+    -insegnante_id
+    -corso
 
 # TABLE NAME: Studenti
     -ID
     -nome
     -cognome
+    -matricola
+
+# TABLE NAME: Voti
+    -ID
+    -voto
+    -esito
 
 
 # TABELLE PONTE
@@ -82,7 +98,7 @@ Un STUDENTE può iscriversi a più APPELLI D'ESAME e un APPELLO D'ESAME può ave
     -ID
     -nome_corso_laurea_id
     -nome_corso_id
-    
+
 
 # TABLE NAME : Corsi / Insegnanti
     -ID
@@ -94,3 +110,10 @@ Un STUDENTE può iscriversi a più APPELLI D'ESAME e un APPELLO D'ESAME può ave
     -ID
     -studenti_id
     appelli_d'esame_id
+
+
+# TABLE NAME: Studente / Voto
+    -ID
+    -studente_id
+    -voto_id
+    -esito_id
