@@ -48,72 +48,72 @@ Uno STUDENTE può avere più di un VOTO e un VOTO può essere dato a più STUDEN
 
 # TABLE NAME: Dipartimenti
 
-    -ID
-    -nome_dipartimento
-    -descrizione
-    -codice_dipartimento
+    -ID - INT
+    -nome_dipartimento - VARCHAR(100)
+    -descrizione - TEXT
+    -codice_dipartimento - SMALLINT
 
 
 # TABLE NAME: Corsi di laurea
-    -ID
-    -nome_corso_laurea
-    -durata
-    -livello
+    -ID INT
+    -nome_corso_laurea - VARCHAR(256)
+    -durata - TINYINT
+    -livello - VARCHAR(100)
     -codice_dipartimento_id
 
 
 # TABLE NAME: Corsi
-    -ID
-    -nome_corso
+    -ID - INT
+    -nome_corso - VARCHAR(256)
 
 
 # TABLE NAME: Insegnanti
-    -ID
-    -nome
-    -cognome
-    -email
+    -ID - INT
+    -nome - VARCHAR(20)
+    -cognome - VARCHAR(20)
+    -email - VARCHAR(50)
     
 
 # TABLE NAME: Appelli esami
-    -ID
-    -data_esame
+    -ID INT
+    -data_esame - DATE
     -insegnante_id
-    -corso
+    -corso_id
 
 # TABLE NAME: Studenti
-    -ID
-    -nome
-    -cognome
-    -matricola
+    -ID INT
+    -nome - VARCHAR(20)
+    -cognome - VARCHAR(20)
+    -matricola - SMALLINT
 
 # TABLE NAME: Voti
-    -ID
-    -voto
-    -esito
+    -ID INT
+    -voto - TINYINT
+    -esito - TINYINT
 
 
 # TABELLE PONTE
 
 # TABLE NAME : Corsi di laurea / Corsi
-    -ID
+    -ID INT
     -nome_corso_laurea_id
     -nome_corso_id
 
 
 # TABLE NAME : Corsi / Insegnanti
-    -ID
+    -ID INT
     -corso_id
     -insegnanti_id
 
 
 # TABLE NAME: Studenti / Appelli d'esame
-    -ID
+    -ID INT
     -studenti_id
     appelli_d'esame_id
 
 
 # TABLE NAME: Studente / Voto
-    -ID
+    -ID INT
     -studente_id
     -voto_id
     -esito_id
