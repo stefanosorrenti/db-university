@@ -48,72 +48,73 @@ Uno STUDENTE può avere più di un VOTO e un VOTO può essere dato a più STUDEN
 
 # TABLE NAME: Dipartimenti
 
-    -ID - INT
-    -nome_dipartimento - VARCHAR(100)
-    -descrizione - TEXT
-    -codice_dipartimento - SMALLINT
+    -ID - INT - PRIMARY_KEY AUTO_INCREMENT
+    -nome_dipartimento - VARCHAR(100) - NOTNULL -INDICE
+    -descrizione - TEXT - DEFAULT('')
+    -codice_dipartimento - SMALLINT - NOTNULL -INDICE
 
 
 # TABLE NAME: Corsi di laurea
-    -ID INT
-    -nome_corso_laurea - VARCHAR(256)
-    -durata - TINYINT
-    -livello - VARCHAR(100)
+    -ID INT - PRIMARY_KEY AUTO_INCREMENT
+    -nome_corso_laurea - VARCHAR(256) - NOTNULL - INDICE
+    -durata - TINYINT - NOTNULL
+    -livello - VARCHAR(100) - NOTNULL
     -codice_dipartimento_id
 
 
 # TABLE NAME: Corsi
-    -ID - INT
-    -nome_corso - VARCHAR(256)
+    -ID - INT - PRIMARY_KEY AUTO_INCREMENT
+    -nome_corso - VARCHAR(256) - NOTNULL 
 
 
 # TABLE NAME: Insegnanti
-    -ID - INT
-    -nome - VARCHAR(20)
-    -cognome - VARCHAR(20)
-    -email - VARCHAR(50)
+    -ID - INT - PRIMARY_KEY AUTO_INCREMENT
+    -nome - VARCHAR(20) - NOTNULL - INDICE
+    -cognome - VARCHAR(20) - NOTNULL - INDICE
+    -email - VARCHAR(50) - DEFAULT('') 
     
 
 # TABLE NAME: Appelli esami
-    -ID INT
-    -data_esame - DATE
+    -ID INT - PRIMARY_KEY AUTO_INCREMENT INDEX
+    -data_esame - DATE - NOTNULL
     -insegnante_id
     -corso_id
+    -email_id
 
 # TABLE NAME: Studenti
-    -ID INT
-    -nome - VARCHAR(20)
-    -cognome - VARCHAR(20)
-    -matricola - SMALLINT
+    -ID INT - PRIMARY_KEY AUTO_INCREMENT INDEX
+    -nome - VARCHAR(20) - NOTNULL - INDICE
+    -cognome - VARCHAR(20) - NOTNULL - INDICE
+    -matricola - SMALLINT - NOTNULL - INDICE
 
 # TABLE NAME: Voti
-    -ID INT
-    -voto - TINYINT
-    -esito - TINYINT
+    -ID INT - PRIMARY_KEY AUTO_INCREMENT INDEX
+    -voto - TINYINT - NOTNULL
+    -esito - TINYINT - NOTNULL
 
 
 # TABELLE PONTE
 
 # TABLE NAME : Corsi di laurea / Corsi
-    -ID INT
+    -ID INT - PRIMARY_KEY AUTO_INCREMENT INDEX
     -nome_corso_laurea_id
     -nome_corso_id
 
 
 # TABLE NAME : Corsi / Insegnanti
-    -ID INT
+    -ID INT - PRIMARY_KEY AUTO_INCREMENT INDEX
     -corso_id
     -insegnanti_id
 
 
 # TABLE NAME: Studenti / Appelli d'esame
-    -ID INT
+    -ID INT - PRIMARY_KEY AUTO_INCREMENT INDEX
     -studenti_id
     appelli_d'esame_id
 
 
 # TABLE NAME: Studente / Voto
-    -ID INT
+    -ID INT - PRIMARY_KEY AUTO_INCREMENT INDEX
     -studente_id
     -voto_id
     -esito_id
