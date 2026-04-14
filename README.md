@@ -41,3 +41,56 @@ Uno STUDENTE è iscritto ad un CORSO DI LAUREA ma un CORSO DI LAUREA ha più STU
 
 Un STUDENTE può iscriversi a più APPELLI D'ESAME e un APPELLO D'ESAME può avere più STUDENTI. //Many to Many
 
+# TABELLE
+
+
+# TABLE NAME: Dipartimenti
+
+    -ID
+    -nome_dipartimento
+    -università
+    -indirizzo
+
+
+# TABLE NAME: Corsi di laurea
+    -ID
+    -nome_corso_laurea
+    -durata
+
+
+# TABLE NAME: Corsi
+    -ID
+    -nome_corso
+
+# TABLE NAME: Insegnanti
+    -ID
+    -nome
+    -cognome
+
+# TABLE NAME: Appelli esami
+    -ID
+
+# TABLE NAME: Studenti
+    -ID
+    -nome
+    -cognome
+
+
+# TABELLE PONTE
+
+# TABLE NAME : Corsi di laurea / Corsi
+    -ID
+    -nome_corso_laurea_id
+    -nome_corso_id
+    
+
+# TABLE NAME : Corsi / Insegnanti
+    -ID
+    -corso_id
+    -insegnanti_id
+
+
+# TABLE NAME: Studenti / Appelli d'esame
+    -ID
+    -studenti_id
+    appelli_d'esame_id
